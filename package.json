@@ -1,0 +1,45 @@
+{
+  "name": "@davestewart/nuxt-sockets",
+  "description": "WebSockets solution for Nuxt",
+  "version": "0.1.0",
+  "repository": "davestewart/nuxt-sockets",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "build": "nuxt-module-build",
+    "release": "npm run lint && npm run test && npm run build && npm publish --access public"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.3.3",
+    "listhen": "^1.0.4",
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "@nuxt/eslint-config": "^0.1.1",
+    "@nuxt/module-builder": "^0.2.1",
+    "@nuxt/schema": "^3.3.3",
+    "@nuxt/test-utils": "^3.3.3",
+    "@types/ws": "^8.5.4",
+    "eslint": "^8.37.0",
+    "nuxt": "^3.3.3",
+    "vitest": "^0.29.8"
+  }
+}
